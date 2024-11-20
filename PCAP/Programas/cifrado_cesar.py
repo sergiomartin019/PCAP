@@ -1,13 +1,15 @@
 # Cifrado César.
 text = input("Ingresa tu mensaje: ")
-cipher = ''
-for char in text:
-    if not char.isalpha(): #si no es una cifra, pasa
-        continue
-    char = char.upper() # m --> M
-    code = ord(char) + 1 # punto de código siguiente
-    if code > ord('Z'): # si rebasa el alfabeto
-        code = ord('A') #empieza otra vez
-    cipher += chr(code)
-
-print(cipher)
+cipher = ""
+shift2 = 0
+while True:
+    number = int(input("Introduce un numero: "))
+    if number > 1 and number < 25:
+        for char in text:
+            code = ord(char) + number
+            primero = ord('A')
+            shift2 += (code -primero) % 26
+            cipher += chr(primero + shift2)
+    else:
+        print("El número debe estar entre 1 y 25")
+    print(cipher)
