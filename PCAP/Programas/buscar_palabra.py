@@ -9,6 +9,7 @@ for c in palabra:
         contiene = False
         break;
     else:
+        
         continue
 print(contiene)
         
