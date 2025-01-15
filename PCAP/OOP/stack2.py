@@ -1,12 +1,15 @@
 import sys
 class Stack:
     def __init__(self):
-            self.__stack_list = []
+        self.size = 0
+        self.__stack_list = []
     def push(self, value):
         self.__stack_list.append(value)
+        self.size += 1
     def pop(self):
         value = self.__stack_list[-1]
         del self.__stack_list[-1]
+        self.size = self.size -1
         return value
     def __str__(self):
         strlist = ""
